@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <style>
+    @keyframes spin {
+      100% { transform: rotate(360deg); }
+    }
+    .flower {
+      transform-origin: 50px 50px;
+      animation: spin 6s linear infinite;
+    }
+  </style>
+  <g class="flower" fill="#ffffff" stroke="#d0d0d0" stroke-width="1">
+    <!-- 8 petals -->
+    <ellipse cx="50" cy="20" rx="10" ry="20" />
+    <ellipse cx="50" cy="80" rx="10" ry="20" />
+    <ellipse cx="20" cy="50" rx="20" ry="10" />
+    <ellipse cx="80" cy="50" rx="20" ry="10" />
+    
+    <ellipse cx="28" cy="28" rx="20" ry="10" transform="rotate(45 28 28)" />
+    <ellipse cx="72" cy="72" rx="20" ry="10" transform="rotate(45 72 72)" />
+    
+    <ellipse cx="28" cy="72" rx="20" ry="10" transform="rotate(-45 28 72)" />
+    <ellipse cx="72" cy="28" rx="20" ry="10" transform="rotate(-45 72 28)" />
+  </g>
+  <!-- center -->
+  <circle cx="50" cy="50" r="12" fill="#facc15" />
+</svg>

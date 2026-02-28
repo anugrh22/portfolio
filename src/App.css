@@ -1,0 +1,117 @@
+/* Component-specific and additional global styles */
+
+.intro-layer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: translateX(0);
+  /* starts fully covered */
+  cursor: pointer;
+}
+
+.brown-layer {
+  background-color: var(--color-accent);
+  z-index: 9998;
+}
+
+.offwhite-layer {
+  background-color: var(--color-bg);
+  z-index: 9999;
+}
+
+.brown-layer.slide-out {
+  animation: slideOutRight 1.2s cubic-bezier(0.74, 0.06, 0.4, 0.92) forwards;
+  animation-delay: 0.1s;
+  pointer-events: none;
+}
+
+.offwhite-layer.slide-out {
+  animation: slideOutRight 1.2s cubic-bezier(0.74, 0.06, 0.4, 0.92) forwards;
+  pointer-events: none;
+}
+
+@keyframes slideOutRight {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.enter-prompt {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  color: var(--color-text);
+  animation: promptPulse 2s infinite ease-in-out;
+}
+
+@keyframes promptPulse {
+
+  0%,
+  100% {
+    opacity: 0.6;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1.03);
+  }
+}
+
+/* helpers for image hover effects */
+.img-hover {
+  position: relative;
+  overflow: hidden;
+}
+
+.img-hover img {
+  display: block;
+  width: 100%;
+  transition: transform 0.4s ease;
+}
+
+.img-hover:hover img {
+  transform: scale(1.05);
+}
+
+.img-hover .caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 0.6rem 1rem;
+  background: rgba(0, 0, 0, 0.4);
+  color: #fff;
+  font-size: 0.9rem;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.img-hover:hover .caption {
+  opacity: 1;
+}
+
+/* cards for skills/projects */
+.card {
+  background-color: var(--color-secondary);
+  color: var(--color-text);
+  padding: 1.5rem;
+  border-radius: 8px;
+}
+
+/* footer */
+.footer {
+  background-color: var(--color-accent);
+  color: var(--color-light);
+  text-align: center;
+  padding: 1rem 0;
+  font-size: 0.9rem;
+}
