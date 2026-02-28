@@ -125,3 +125,28 @@ button:focus-visible {
 .section:nth-of-type(4) {
   transition-delay: 0.6s;
 }
+
+/* Jumping Letters Animation */
+@keyframes letter-jump {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+}
+
+.jumping-word {
+  display: inline-block;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.jumping-letter {
+  display: inline-block;
+  transition: transform 0.2s ease;
+}
+
+.animate-jump {
+  animation: letter-jump 0.5s ease-in-out;
+}

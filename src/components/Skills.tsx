@@ -1,5 +1,6 @@
 import { useRef } from 'react';
 import { useInView } from '../hooks/useInView';
+import JumpingText from './JumpingText';
 
 const skills = [
   { name: 'HTML/CSS', level: 90 },
@@ -15,14 +16,14 @@ const Skills: React.FC = () => {
   return (
     <section ref={ref} className="section">
       <div className="container">
-        <h2>Skills</h2>
+        <h2><JumpingText text="Skills" /></h2>
         <div
           className="grid"
           style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(150px, 1fr))', gap: '1rem' }}
         >
           {skills.map((skill, idx) => (
             <div key={idx} className="card">
-              <h3>{skill.name}</h3>
+              <h3><JumpingText text={skill.name} /></h3>
               <div
                 style={{
                   height: '6px',

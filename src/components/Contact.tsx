@@ -1,5 +1,6 @@
 import { useRef, useState } from 'react';
 import { useInView } from '../hooks/useInView';
+import JumpingText from './JumpingText';
 
 const Contact: React.FC = () => {
   const ref = useRef<HTMLElement | null>(null);
@@ -64,7 +65,7 @@ const Contact: React.FC = () => {
   return (
     <section id="contact" ref={ref} className="section" style={{ padding: '3rem 0' }}>
       <div className="container">
-        <h2>Anonymous Messages</h2>
+        <h2><JumpingText text="Anonymous Messages" /></h2>
         <form
           onSubmit={handleSubmit}
           style={{
@@ -85,7 +86,7 @@ const Contact: React.FC = () => {
           <button type="submit" disabled={status === 'sending'} style={{ opacity: status === 'sending' ? 0.7 : 1 }}>
             {status === 'sending' ? 'Sending...' : status === 'success' ? 'Sent!' : 'Send Message'}
           </button>
-          {status === 'error' && <p style={{ color: 'red', textAlign: 'center', fontSize: '0.9rem' }}>Something went wrong, please ensure your NGL username is set correctly.</p>}
+          {status === 'error' && <p style={{ color: 'red', textAlign: 'center', fontSize: '0.9rem' }}><JumpingText text="Something went wrong, please ensure your NGL username is set correctly." /></p>}
         </form>
       </div>
     </section>

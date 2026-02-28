@@ -1,9 +1,10 @@
 import type { FC } from 'react';
+import JumpingText from './JumpingText';
 
 const Footer: FC = () => {
   return (
     <footer className="footer">
-      <p>&copy; {new Date().getFullYear()} Anugrah. All rights reserved.</p>
+      <p><JumpingText text={`© ${new Date().getFullYear()} Anugrah. All rights reserved.`} /></p>
     </footer>
   );
 };
